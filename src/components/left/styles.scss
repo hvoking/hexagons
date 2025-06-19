@@ -1,0 +1,34 @@
+.left {
+	overflow: hidden;
+}
+.airbnb-sidebar-items {
+	display: grid;
+	grid-template-rows: 1fr 1fr 1fr;
+	grid-gap: 5px;
+	overflow: hidden;
+	color: rgba(255, 255, 255, 1);
+}
+.sidebar-item-wrapper {
+	display: grid;
+	background-color: rgba(33, 33, 43, 1);
+	border-radius: 20px;
+	overflow: hidden;
+}
+.right-item-wrapper {
+	display: grid;
+	grid-template-rows: 30px auto;
+	background-color: rgba(33, 33, 43, 1);
+	border-radius: 20px;
+	overflow: hidden;
+}
+.sidebar-sub-title {
+
+	padding: 5px;
+  padding-left: 20px;
+  font-weight: 500;
+}
+.airbnb-message-wrapper {
+	display: grid; 
+	height: 100%;
+	grid-gap: 10px;
+}

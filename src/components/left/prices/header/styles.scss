@@ -1,0 +1,25 @@
+.airbnb-calculator-item-wrapper {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(33, 33, 43, 1);
+  border-radius: 20px;
+  align-items: center;
+  padding-top: 10px;
+}
+.property-prices {
+  display: flex;
+  gap: 5px;
+  padding-right: 20px;
+  color: rgba(255, 255, 255, 0.8);
+}
+.airbnb-property-prices-number {
+  border: 2px solid rgba(126, 126, 132, 1);
+  border-radius: 3px;
+  font-weight: 580;
+  background-color: rgba(23, 23, 32, 1);
+  text-align: center;
+  padding: 5px;
+  padding-top: 2px;  
+  padding-bottom: 2px;  
+  font-size: 0.8em;
+}

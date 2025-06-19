@@ -1,0 +1,17 @@
+.initial-marker-text {
+  position: absolute;
+  left: 50%;
+  top: calc(50% + 10px);
+  transform: translate(-50%, 0);
+  color: rgba(255, 255, 255, 1);
+  white-space: nowrap;
+  z-index: 3;
+  background-color: rgba(33, 33, 43, 0.8);
+  padding: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 10px;
+}
+.mapboxgl-marker {
+  z-index: 3;
+}

@@ -1,0 +1,10 @@
+.main {
+  background-color: rgba(23, 23, 32, 1);
+  height: calc(var(--vh, 1vh) * 100);
+  max-height: calc(var(--vh, 1vh) * 100);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 5fr 19fr;
+  padding: 5px;
+  grid-gap: 5px;
+}
