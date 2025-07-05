@@ -1,5 +1,5 @@
 // React imports
-import { useState, useEffect, useContext, createContext } from 'react';
+import { useState, useEffect, useRef, useContext, createContext } from 'react';
 
 // App imports
 import * as Locations from './locations';
@@ -26,6 +26,23 @@ export const GeoProvider = ({children}: any) => {
 		latitude: viewport.latitude, 
 		longitude: viewport.longitude 
 	});
+	const [ mapStyle, setMapStyle ] = useState("mapbox://styles/hvoking/clrwzn1jo015q01nl53664m2c");
+
+	const mapRef = useRef<any>();
+
+	useEffect(() => {
+	  mapRef.current?.flyTo({
+	    center: [ viewport.longitude, viewport.latitude ],
+	    zoom: viewport.zoom,
+	    duration: 3000, 
+	    essential: true,
+	  });
+
+	  setMarker({
+	    longitude: viewport.longitude, 
+	    latitude: viewport.latitude
+	  })
+	}, [ viewport ]);
 
 	useEffect(() => {
 		setViewport({...viewport, ...placeCoordinates});
@@ -43,6 +60,7 @@ export const GeoProvider = ({children}: any) => {
 			geocodingLongitude, setGeocodingLongitude,
 			geocodingLatitude, setGeocodingLatitude,
 			Locations,
+			mapRef, mapStyle, setMapStyle
 		}}>
 			{children}
 		</GeoContext.Provider>

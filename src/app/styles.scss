@@ -1,4 +1,10 @@
-.main {
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: montserrat;
+  background-color: rgba(23, 23, 32, 1);
+}
+.App {
   background-color: rgba(23, 23, 32, 1);
   height: calc(var(--vh, 1vh) * 100);
   max-height: calc(var(--vh, 1vh) * 100);

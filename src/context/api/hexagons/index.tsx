@@ -2,7 +2,7 @@
 import { useState, useEffect, useContext, createContext } from 'react';
 
 // Context imports
-import { useIsochroneApi } from '../isochrone';
+import { useIsochroneApi } from 'context/api/isochrone';
 import { usePrices } from 'context/filters/prices';
 import { useDates } from 'context/filters/dates';
 import { useEquipment } from 'context/filters/equipment';
@@ -33,9 +33,18 @@ export const HexagonsApiProvider = ({children}: any) => {
 				hexagons_api
 			`;
 			const url = tempUrl.replace(/\s/g, '');
-			const res = await fetch(url);
-			const receivedData = await res.json();
-			setHexagonsData(receivedData[0]);
+			try {
+				const res = await fetch(url);
+				if (!res.ok) {
+		  			throw new Error(`HTTP error! status: ${res.status}`);
+		  		}
+				const receivedData = await res.json();
+				setHexagonsData(receivedData[0]);
+			}
+			catch (error) {
+		    	console.error("Error fetching address:", error);
+		    	return null;
+		    }
 		}
 		isochroneData && fetchData();
 	}, [ isochroneData ]);

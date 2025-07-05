@@ -4,9 +4,11 @@ import { MapsProvider } from './maps';
 import { ApiProvider } from './api';
 import { SizesProvider } from './sizes';
 import { LimitsProvider } from './limits';
+import { GeoProvider } from './geo';
 
-export const MainProvider = ({children}: any) => {
+export const ContextProvider = ({children}: any) => {
   return (
+    <GeoProvider>
     <FiltersProvider>
     <ApiProvider>
     <LimitsProvider>
@@ -18,13 +20,15 @@ export const MainProvider = ({children}: any) => {
     </LimitsProvider>
     </ApiProvider>
     </FiltersProvider>
+    </GeoProvider>
   )
 }
 
-MainProvider.displayName="MainProvider";
+ContextProvider.displayName="ContextProvider";
 
 export * from './filters';
 export * from './maps';
 export * from './api';
 export * from './sizes';
 export * from './limits';
+export * from './geo';

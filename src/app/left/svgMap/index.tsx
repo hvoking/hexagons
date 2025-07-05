@@ -9,11 +9,11 @@ import { Pin } from './pin';
 import './styles.scss';
 
 // Context imports
-import { usePolygonApi } from '../../../context/api/polygon';
-import { useIsochroneApi } from '../../../context/api/isochrone';
-import { useSvgMapSizes } from '../../../context/sizes/svgMap';
-import { useGeo } from '../../../context/filters/geo';
-import { useReverseGeocodingApi } from '../../../context/api/google/reverse';
+import { usePolygonApi } from 'context/api/polygon';
+import { useIsochroneApi } from 'context/api/isochrone';
+import { useSvgMapSizes } from 'context/sizes/svgMap';
+import { useGeo } from 'context/geo';
+import { useReverseGeocodingApi } from 'context/api/google/reverse';
 
 // Third-party imports
 import * as d3 from 'd3';
