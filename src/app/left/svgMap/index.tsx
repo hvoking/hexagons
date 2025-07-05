@@ -13,7 +13,6 @@ import { usePolygonApi } from 'context/api/polygon';
 import { useIsochroneApi } from 'context/api/isochrone';
 import { useSvgMapSizes } from 'context/sizes/svgMap';
 import { useGeo } from 'context/geo';
-import { useReverseGeocodingApi } from 'context/api/google/reverse';
 
 // Third-party imports
 import * as d3 from 'd3';
@@ -26,7 +25,7 @@ export const SvgMap = () => {
 	const { isochroneData } = useIsochroneApi();
 	const { innerWidth, innerHeight } = useSvgMapSizes();
 	const { placeCoordinates, setPlaceCoordinates } = useGeo();
-	const { currentAddress } = useReverseGeocodingApi();
+	
 
 	if (!isochroneData || !polygonData || !polygonData[0]) return (<></>)
 
@@ -63,7 +62,7 @@ export const SvgMap = () => {
 				</div>
 				<div></div>
 			</div>
-			<Location currentAddress={currentAddress}/>
+			<Location/>
 		</div>
 	)
 }
